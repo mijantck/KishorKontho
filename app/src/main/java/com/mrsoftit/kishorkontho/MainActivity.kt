@@ -2,6 +2,7 @@ package com.mrsoftit.kishorkontho
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.CollectionReference
@@ -31,17 +32,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() {
-        val query:Query = collectionReference
+        val query:Query = collectionReference.orderBy("number",Query.Direction.DESCENDING)
 
         val firestoreRecyclerOptions:FirestoreRecyclerOptions<BookNote> = FirestoreRecyclerOptions.Builder<BookNote>()
             .setQuery(query,BookNote::class.java)
             .build()
         bookAdapter = BookAdapter(firestoreRecyclerOptions)
 
-        recyclerview.layoutManager = LinearLayoutManager(this)
+        recyclerview.layoutManager = GridLayoutManager(this,2)
+
         recyclerview.adapter = bookAdapter
-
-
 
     }
 

@@ -2,7 +2,9 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
     <LinearLayout
         android:layout_gravity="center"
         android:gravity="center"
@@ -10,11 +12,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <ImageView
+            android:scaleType="fitXY"
             android:id="@+id/book_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="250dp"/>
         <TextView
-
             android:padding="10dp"
             android:textSize="20dp"
             android:textColor="@android:color/black"
