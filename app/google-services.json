@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "280872603866",
+    "project_id": "kishor-kontho",
+    "storage_bucket": "kishor-kontho.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280872603866:android:347fa5def84c5214a495e3",
+        "android_client_info": {
+          "package_name": "com.mrsoftit.kishorkontho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280872603866-ealgp35317t5f3jhgchls54071r3jhut.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mrsoftit.kishorkontho",
+            "certificate_hash": "0d9a083c460665a995e794c032b6b10f479bbbc2"
+          }
+        },
+        {
+          "client_id": "280872603866-ht7ktsbtmkh10amj5d8e5fv6ggteini3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy7eZ7JGboQ_zFACIxErPTDCSYHnF639k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280872603866-ht7ktsbtmkh10amj5d8e5fv6ggteini3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
