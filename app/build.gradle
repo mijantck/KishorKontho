@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.mrsoftit.kishorkontho"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -53,6 +53,10 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'com.mindorks.android:prdownloader:0.6.0'
+    implementation 'com.github.fevziomurtekin:custom-progress-dialog:0.1.0'
+
+    implementation 'com.facebook.android:audience-network-sdk:5.7.0'
+
 
 }
 apply plugin: 'com.google.gms.google-services'
