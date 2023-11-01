@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Kisor Kontho</string>
+    <string name="home">Home</string>
+
+    <string name="logout">Logout</string>
+    <string name="favourites">Favourites</string>
+    <string name="shares">Share</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="http">https://</string>
+
+    <string name="dummy">Selected Image</string>
+    <string name="download" />
+    <string name="bookmarked">Bookmarked</string>
+    <string name="downloadBooks">Downloaded PDF</string>
+    <string name="screenshot">Screenshot</string>
+    <string name="search">Search</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="develop_by_quick_startapps">Develop by MrSoft It</string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "448736308601",
+    "project_id": "kishorkontha-3cbdf",
+    "storage_bucket": "kishorkontha-3cbdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448736308601:android:dade32bae6549cd28793a8",
+        "android_client_info": {
+          "package_name": "com.mrsoftit.kishorkontho"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADbf_eAG36osjtjs10wAc5W4xapCjmvoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
