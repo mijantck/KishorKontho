@@ -366,56 +366,47 @@ public class PdfDetail extends AppCompatActivity {
         });
 
         read.setOnClickListener(v -> {
+            Log.d(TAG, "onCreate: 1111");
+            Log.d(TAG, "onCreate: 3333");
+            final DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Books");
+            final Query query1 = reference1.orderByChild("id").equalTo(id);
+            query1.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                    connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-//                if (mInterstitialAd != null) {
-//                    showInterstitialAd();
-//                } else {
-//                    loadInterstitialAd();
-//                }
-            } else {
-                // for offline oppening of book without ads...
-                final DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Books");
-                final Query query1 = reference1.orderByChild("id").equalTo(id);
-                query1.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot != null) {
+                        for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                            Books books = snapshot1.getValue(Books.class);
 
-                        if (snapshot != null) {
-                            for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-                                Books books = snapshot1.getValue(Books.class);
+                            Log.d(TAG, "Reading_book" + books);
 
-                                Log.d(TAG, "Reading_book" + books);
-
-                                if (snapshot1.child("readers").exists()) {
-                                    String readers = books.getReaders();
-                                    int integerReader = (Integer.parseInt(readers)) + 1;
-                                    books.setReaders(String.valueOf(integerReader));
-                                    reference1.child(id).setValue(books);
-                                    readersText.setText(books.getReaders());
-                                } else {
-                                    books.setReaders("1");
-                                    reference1.child(id).setValue(books);
-                                    readersText.setText(books.getReaders());
-                                }
+                            if (snapshot1.child("readers").exists()) {
+                                Log.d(TAG, "onCreate:444");
+                                String readers = books.getReaders();
+                                int integerReader = (Integer.parseInt(readers)) + 1;
+                                books.setReaders(String.valueOf(integerReader));
+                            } else {
+                                Log.d(TAG, "onCreate: 5555");
+                                books.setReaders("1");
                             }
+                            Log.d(TAG, "onCreate: 6666");
+                            reference1.child(id).setValue(books);
+                            readersText.setText(books.getReaders());
                         }
                     }
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
+                }
+            });
 
-                Intent i1 = new Intent(PdfDetail.this, BookView.class);
-                i1.putExtra("pdfUrl", pdfUrl);
-                i1.putExtra("bookId", id);
-                i1.putExtra("bookName", bookName);
-                startActivity(i1);
-            }
+            Intent i1 = new Intent(PdfDetail.this, BookView.class);
+            i1.putExtra("pdfUrl", pdfUrl);
+            i1.putExtra("bookId", id);
+            i1.putExtra("bookName", bookName);
+            startActivity(i1);
 
 
         });

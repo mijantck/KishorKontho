@@ -12,8 +12,8 @@ android {
         applicationId "com.mrsoftit.kishorkontho"
         minSdkVersion 19
         targetSdkVersion 34
-        versionCode 4004
-        versionName "4.0.4"
+        versionCode 4005
+        versionName "4.0.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
